@@ -15,7 +15,7 @@ scene.onOverlapTile(SpriteKind.Enemy, assets.tile`myTile5`, function (sprite, lo
     Horse_2.setVelocity(0, 0)
     Horse_3.setVelocity(0, 0)
     Horse_4.setVelocity(0, 0)
-    game.showLongText("Horse 3 Won", DialogLayout.Left)
+    game.showLongText("Horse 4 Won", DialogLayout.Left)
     Pointer = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -3186,7 +3186,7 @@ y = game.askForNumber("Hand in Bets", 6)
 x = x - y
 info.setScore(x)
 game.onUpdate(function () {
-    if (x <= -1) {
+    if (x <= 0) {
         game.over(false)
     }
 })
