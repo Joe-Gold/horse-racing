@@ -5,9 +5,6 @@ namespace SpriteKind {
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     Pointer.y += -30
 })
-scene.onHitWall(SpriteKind.Pointer, function (sprite, location) {
-    Pointer.setPosition(7, 33)
-})
 info.onCountdownEnd(function () {
     Horse_1.setVelocity(randint(20, 70), 0)
     Horse_2.setVelocity(randint(20, 70), 0)
@@ -3230,6 +3227,14 @@ x = 100
 y = game.askForNumber("Hand in Bets", 6)
 x = x - y
 info.setScore(x)
+game.onUpdate(function () {
+    if (Pointer.y < 10) {
+        Pointer.setPosition(7, 33)
+    }
+    if (Pointer.y > 130) {
+        Pointer.setPosition(7, 123)
+    }
+})
 game.onUpdate(function () {
     if (x <= -1) {
         game.over(false)
